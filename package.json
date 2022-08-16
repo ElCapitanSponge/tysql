@@ -1,0 +1,36 @@
+{
+    "name": "tysql",
+    "version": "0.1.0",
+    "description": "General purpose mysql utility for typescript",
+    "main": "dist/tysql.js",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w & nodemon -q -w ./src ./dist",
+        "docs": "npx typedoc --options ./typedoc.json",
+        "package": "npm pack --pack-destination releases"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ElCapitanSponge/tysql.git"
+    },
+    "keywords": [
+        "MySQL",
+        "TypeScript"
+    ],
+    "author": "Andrew Brunker",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ElCapitanSponge/tysql/issues"
+    },
+    "homepage": "https://github.com/ElCapitanSponge/tysql#readme",
+    "devDependencies": {
+        "@types/node": "^18.0.5",
+        "nodemon": "^2.0.19",
+        "typedoc": "^0.23.8"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "mysql": "^2.18.1",
+        "typescript": "^4.7.4"
+    }
+}
