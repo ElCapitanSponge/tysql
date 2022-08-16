@@ -1,9 +1,30 @@
 <a name="readme-top"></a>
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<div align="center">
+    <!-- CONTRIBUTORS -->
+    <a href="https://github.com/ElCapitanSponge/tysql/graphs/contributors">
+        <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/ElCapitanSponge/tysql">
+    </a>
+    <!-- FORKS -->
+    <a href="https://github.com/ElCapitanSponge/tysql/network/members">
+        <img alt="GitHub forks" src="https://img.shields.io/github/forks/ElCapitanSponge/tysql">
+    </a>
+    <!-- STARS -->
+    <a href="https://github.com/ElCapitanSponge/tysql/stargazers">
+        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ElCapitanSponge/tysql">
+    </a>
+    <!-- ISSUES -->
+    <a href="https://github.com/ElCapitanSponge/tysql/issues">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/ElCapitanSponge/tysql">
+    </a>
+    <!-- PULL REQUESTS -->
+    <a href="https://github.com/ElCapitanSponge/tysql/pulls">
+        <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/ElCapitanSponge/tysql">
+    </a>
+    <!-- LICENSE -->
+    <a href="https://github.com/ElCapitanSponge/tysql/blob/master/LICENSE">
+        <img alt="GitHub" src="https://img.shields.io/github/license/ElCapitanSponge/tysql">
+    </a>
+</div>
 <br />
 <div align="center">
     <h1 align="center">
@@ -68,14 +89,3 @@ See the [open issues](https://github.com/ElCapitanSponge/tysql/issues) for a ful
 # License
 Distributed under the MIT License. See `LICENSE` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-[contributors-shield]: https://img.shields.io/github/contributors/ElCapitanSponge/tysql.svg?style=for-the-badge
-[contributors-url]: https://github.com/ElCapitanSponge/tysql/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ElCapitanSponge/tysql.svg?style=for-the-badge
-[forks-url]: https://github.com/ElCapitanSponge/tysql/network/members
-[stars-shield]: https://img.shields.io/github/stars/ElCapitanSponge/tysql.svg?style=for-the-badge
-[stars-url]: https://github.com/ElCapitanSponge/tysql/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ElCapitanSponge/tysql.svg?style=for-the-badge
-[issues-url]: https://github.com/ElCapitanSponge/tysql/issues
-[license-shield]: https://img.shields.io/github/license/ElCapitanSponge/tysql.svg?style=for-the-badge
-[license-url]: https://github.com/ElCapitanSponge/tysql/blob/master/LICENSE
