@@ -1,12 +1,48 @@
 import { createPool, Pool } from 'mysql'
 import { helper } from './helper'
 
+/**
+ * Database handler for TySQL
+ * 
+ * @export
+ * @class database
+ */
 export class database {
+    /**
+     * Handler for the pooled connection type
+     * 
+     * @private
+     * @type {Pool} The connection pool used by the database handler
+     * @memberOf database
+     */
     private pool: Pool
+    /**
+     * Handler for the straigh connection type
+     * 
+     * @private
+     * 
+     * @memberOf database
+     */
     private connection
 
+    /**
+     * Creates an instance of database.
+     * @param {NodeJS.ProcessEnv} env Reference to the process.env that has had the `.env` or similar, applied from TySQL
+     * @param {boolean} [use__pool=true] Flag for if the pool or normal connection to the database is the be used. Defaults to using the pool connection 
+     * @param {helper} helper Reference to the helper utility found within TySQL
+     * 
+     * @memberOf database
+     */
     constructor(private env: NodeJS.ProcessEnv, protected use__pool: boolean = true, protected helper: helper) {}
 
+    /**
+     * 
+     * 
+     * @private
+     * @returns {Promise<Pool>} Promise containing either suth successful pool conneciton or an error message if the connection has failed when attempting to be established
+     * 
+     * @memberOf database
+     */
     private pool__create(): Promise<Pool> {
         return new Promise<Pool>((resolve: Pool, reject) => {
             try {
@@ -26,17 +62,27 @@ export class database {
         })
     }
 
-    public initialise(): Promise<any> {
+    /**
+     * Initialising the connection to the database.
+     * If flagged to use a pooled connection, this will be initalised and handled as required.
+     * Otherwise a normal connection will be initalised and handled as required.
+     * 
+     * @returns {Promise<boolean>} The promise returns true if the conenction has been successful, otherwise an applicable error will be thrown
+     * 
+     * @memberOf database
+     */
+    public initialise(): Promise<boolean> {
         if (this.use__pool)
             return this.pool__create()
                 .then((response: Pool) => {
-                    return this.pool = response
+                    this.pool = response
+                    return true
                 })
                 .catch(error => {
                     throw error
                 })
         else
-            return new Promise((resolve, reject) => {
+            return new Promise<boolean>((resolve, reject) => {
                 reject ('Connection not yet implemented')
             }) 
     }

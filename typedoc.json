@@ -7,5 +7,6 @@
     "name": "TySQL",
     "includeVersion": true,
     "readme": "./README.md",
-    "out": "./docs"
+    "out": "./docs",
+    "excludeExternals": false
 }
