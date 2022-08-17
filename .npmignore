@@ -1,6 +1,6 @@
 src/
 .env*
-bitbucket-pipelines.yml
 tsconfig.json
 typedoc.json
 releases/
+docs/
