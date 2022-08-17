@@ -122,12 +122,12 @@ export class tysql {
     /**
      * Creates a new instance of the database library.
      * 
-     * @param {boolean} [use__pool=true] Boolean flag for if the database will connect via a pooled connection, or through a standard connection
+     * @param {boolean} [use__pool=false] Boolean flag for if the database will connect via a pooled connection, or through a standard connection
      * @returns {boolean} Returns true if the database library is loaded correctly, Otherwise false.
      * 
      * @memberOf tysql
      */
-    public db__load(use__pool: boolean = true): boolean {
+    public db__load(use__pool: boolean = false): boolean {
         this.db = new database(this.env, use__pool, this.helper)
         return this.db__loaded()
     }
