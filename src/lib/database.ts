@@ -103,4 +103,11 @@ export class database {
                 reject ('Connection not yet implemented')
             }) 
     }
+
+    public query(qry: string, values?: any[]): Promise<any> {
+        // NOTE: https://www.npmjs.com/package/mysql#performing-queries
+        return new Promise<any>((reolve, reject) => {
+
+        })
+    }
 }
