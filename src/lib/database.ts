@@ -1,4 +1,5 @@
 import { createPool, Pool } from 'mysql'
+import { credentials } from './database.interfaces'
 import { helper } from './helper'
 
 /**
@@ -26,14 +27,22 @@ export class database {
     private connection
 
     /**
+     * Object that if initalised contains the credentials to be used for the connection/s
+     * 
+     * @private
+     * @type {(credentials | undefined)}
+     * @memberOf database
+     */
+    private credentials: credentials | undefined
+    /**
      * Creates an instance of database.
      * @param {NodeJS.ProcessEnv} env Reference to the process.env that has had the `.env` or similar, applied from TySQL
-     * @param {boolean} [use__pool=true] Flag for if the pool or normal connection to the database is the be used. Defaults to using the pool connection 
+     * @param {boolean} [use__pool=false] Flag for if the pool or normal connection to the database is the be used. Defaults to NOT using the pool connection 
      * @param {helper} helper Reference to the helper utility found within TySQL
      * 
      * @memberOf database
      */
-    constructor(private env: NodeJS.ProcessEnv, protected use__pool: boolean = true, protected helper: helper) {}
+    constructor(private env: NodeJS.ProcessEnv, protected use__pool: boolean = false, protected helper: helper) {}
 
     /**
      * 
@@ -62,6 +71,14 @@ export class database {
         })
     }
 
+    public validate__env(): Promise<boolean> {
+        return new Promise<boolean>((resolve, reject) => {
+            let valid: boolean = false
+
+            resolve(valid)
+        })
+    }
+
     /**
      * Initialising the connection to the database.
      * If flagged to use a pooled connection, this will be initalised and handled as required.
@@ -85,5 +102,12 @@ export class database {
             return new Promise<boolean>((resolve, reject) => {
                 reject ('Connection not yet implemented')
             }) 
+    }
+
+    public query(qry: string, values?: any[]): Promise<any> {
+        // NOTE: https://www.npmjs.com/package/mysql#performing-queries
+        return new Promise<any>((reolve, reject) => {
+
+        })
     }
 }
