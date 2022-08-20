@@ -71,7 +71,7 @@ This was born out of the desire to have robust module for managing and working w
 ## Installation
 
 ```sh
-npm install tysql
+npm install @elcapitansponge/tysql
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

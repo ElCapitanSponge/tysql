@@ -1,5 +1,5 @@
 {
-    "name": "tysql",
+    "name": "@elcapitansponge/tysql",
     "version": "0.1.0",
     "description": "General purpose mysql utility for typescript",
     "main": "dist/tysql.js",
