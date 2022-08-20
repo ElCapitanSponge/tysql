@@ -43,20 +43,10 @@ export class database {
      * @memberOf database
      */
     constructor(private env: NodeJS.ProcessEnv, protected use__pool: boolean = false, protected helper: helper) {
-        this.credentials = {
-            host: this.env.db__host,
-            user: this.env.db__user,
-            password: this.env.db__password,
-            port: parseInt(this.env.db__port)
-        }
-        if (typeof this.env.db__database !== 'undefined')
-            this.credentials.database = this.env.db__database
-        if (typeof this.env.db__port !== 'undefined')
-            this.credentials.port = parseInt(this.env.db__port)
     }
 
     /**
-     * 
+     * Creation of a pooled connection
      * 
      * @private
      * @returns {Promise<Pool>} Promise containing either suth successful pool conneciton or an error message if the connection has failed when attempting to be established
@@ -77,7 +67,7 @@ export class database {
     }
 
     /**
-     * 
+     * Creation of a standard mysql connection
      * 
      * @private
      * @returns {Promise<Connection>} 
@@ -98,17 +88,43 @@ export class database {
     }
 
     /**
+     * Initialise the credentials that are to be used
      * 
+     * @private
+     * @memberOf database
+     */
+    private initialise__credentials = (): void => {
+        this.credentials = {
+            host: this.env.db__host,
+            user: this.env.db__user,
+            password: this.env.db__password,
+            port: parseInt(this.env.db__port)
+        }
+        if (typeof this.env.db__database !== 'undefined')
+            this.credentials.database = this.env.db__database
+        if (typeof this.env.db__port !== 'undefined')
+            this.credentials.port = parseInt(this.env.db__port)
+    }
+
+    /**
+     * Validation of the environment variables
      * 
+     * @private
      * @returns {Promise<boolean>} 
      * 
      * @memberOf database
      */
-    public validate__env = (): Promise<boolean> => {
+    private validate__env = (): Promise<boolean> => {
         return new Promise<boolean>((resolve, reject) => {
-            let valid: boolean = false
-
-            resolve(valid)
+            if (typeof this.env.db__host === 'undefined')
+                reject(new Error('DB Host is not defined'))
+            if (typeof this.env.db__user === 'undefined')
+                reject(new Error('DB User is not defined'))
+            if (typeof this.env.db__password === 'undefined')
+                reject(new Error('DB Password is not defined'))
+            if (typeof this.env.db__port === 'undefined')
+                reject(new Error('DB Port is not defined'))
+            resolve(true)
         })
     }
 
@@ -122,32 +138,40 @@ export class database {
      * @memberOf database
      */
     public initialise = (): Promise<boolean> => {
-        if (this.use__pool)
-            return this.pool__create()
-                .then((response: Pool) => {
-                    this.pool = response
-                    return true
-                })
-                .catch(error => {
-                    throw error
-                })
-        else
-            return this.connection__create()
-                .then((response: Connection) => {
-                    this.connection = response
-                    return true
-                })
-                .catch(error => {
-                    throw error
-                })
+        return this.validate__env()
+            .then((response) => {
+                this.initialise__credentials()
+                if (this.use__pool)
+                    return this.pool__create()
+                        .then((response: Pool) => {
+                            this.pool = response
+                            return true
+                        })
+                        .catch(error => {
+                            throw error
+                        })
+                else
+                    return this.connection__create()
+                        .then((response: Connection) => {
+                            this.connection = response
+                            return true
+                        })
+                        .catch(error => {
+                            throw error
+                        })
+            })
+            .catch(error => {
+                throw error
+            })
+        
     }
 
     /**
-     * 
+     * Executing the desired query
      * 
      * @param {string} qry The query that is to be executed
      * @param {any[]} [values] The list of values to be applied to the prepared statement if applicable
-     * @returns {Promise<T>} 
+     * @returns {Promise<T>} Returns the result of the query
      * 
      * @memberOf database
      */
@@ -198,9 +222,9 @@ export class database {
     }
 
     /**
+     * Closing of the desired connection
      * 
-     * 
-     * @returns {Promise<boolean>} 
+     * @returns {Promise<boolean>} Returns true if the connection has closed
      * 
      * @memberOf database
      */

@@ -34,7 +34,7 @@
         (TypeScript SQL)
     </h4>
     <p align="center">
-        An awesome utility to make working with MySQL databases within TypeScript projects simpler
+        An awesome utility to make working with MySQL databases within TypeScript/JS projects simpler
     </p>
     <a href="https://github.com/ElCapitanSponge/tysql/issues/new">Report Bug</a>
     ·

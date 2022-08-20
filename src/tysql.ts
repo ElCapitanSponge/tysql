@@ -144,11 +144,11 @@ export class tysql {
     }
 
     /**
+     * Running a desired query. Preferable to use a prepared sql statement to mitigate injection issues
      * 
-     * 
-     * @param {string} qry 
-     * @param {any[]} [vals] 
-     * @returns {Promise<any>} 
+     * @param {string} qry The query that is to be executed
+     * @param {any[]} [vals] An array of the values to be injected into a prepared sql statement if applicable.
+     * @returns {Promise<any>} Retrieve the resukt of the query that has been executed 
      * 
      * @memberOf tysql
      */
@@ -157,9 +157,9 @@ export class tysql {
     }
 
     /**
+     * losing of the database connection
      * 
-     * 
-     * @returns {Promise<boolean>} 
+     * @returns {Promise<boolean>} Returns true if the connection has closed.
      * 
      * @memberOf tysql
      */
