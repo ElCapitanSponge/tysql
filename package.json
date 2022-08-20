@@ -23,7 +23,7 @@
     "bugs": {
         "url": "https://github.com/ElCapitanSponge/tysql/issues"
     },
-    "homepage": "https://github.com/ElCapitanSponge/tysql#readme",
+    "homepage": "https://elcapitansponge.github.io/tysql/",
     "devDependencies": {
         "@types/node": "^18.0.5",
         "nodemon": "^2.0.19",
