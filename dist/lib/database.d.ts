@@ -14,22 +14,30 @@ export declare class database {
      * Handler for the pooled connection type
      *
      * @private
-     * @type {Pool} The connection pool used by the database handler
+     * @type {(Pool | undefined)} The connection pool used by the database handler
      * @memberOf database
      */
     private pool;
     /**
-     * Handler for the straigh connection type
+     *
      *
      * @private
-     *
+     * @type {(Connection | undefined)}
      * @memberOf database
      */
     private connection;
     /**
+     * Object that if initalised contains the credentials to be used for the connection/s
+     *
+     * @private
+     * @type {(credentials | undefined)}
+     * @memberOf database
+     */
+    private credentials;
+    /**
      * Creates an instance of database.
      * @param {NodeJS.ProcessEnv} env Reference to the process.env that has had the `.env` or similar, applied from TySQL
-     * @param {boolean} [use__pool=true] Flag for if the pool or normal connection to the database is the be used. Defaults to using the pool connection
+     * @param {boolean} [use__pool=false] Flag for if the pool or normal connection to the database is the be used. Defaults to NOT using the pool connection
      * @param {helper} helper Reference to the helper utility found within TySQL
      *
      * @memberOf database
@@ -45,6 +53,23 @@ export declare class database {
      */
     private pool__create;
     /**
+     *
+     *
+     * @private
+     * @returns {Promise<Connection>}
+     *
+     * @memberOf database
+     */
+    private connection__create;
+    /**
+     *
+     *
+     * @returns {Promise<boolean>}
+     *
+     * @memberOf database
+     */
+    validate__env: () => Promise<boolean>;
+    /**
      * Initialising the connection to the database.
      * If flagged to use a pooled connection, this will be initalised and handled as required.
      * Otherwise a normal connection will be initalised and handled as required.
@@ -53,5 +78,23 @@ export declare class database {
      *
      * @memberOf database
      */
-    initialise(): Promise<boolean>;
+    initialise: () => Promise<boolean>;
+    /**
+     *
+     *
+     * @param {string} qry The query that is to be executed
+     * @param {any[]} [values] The list of values to be applied to the prepared statement if applicable
+     * @returns {Promise<T>}
+     *
+     * @memberOf database
+     */
+    query: <T>(qry: string, values?: any[]) => Promise<T>;
+    /**
+     *
+     *
+     * @returns {Promise<boolean>}
+     *
+     * @memberOf database
+     */
+    close: () => Promise<boolean>;
 }
