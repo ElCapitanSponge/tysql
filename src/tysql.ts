@@ -56,7 +56,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    private env__load(): NodeJS.ProcessEnv {
+    private env__load = (): NodeJS.ProcessEnv => {
         if (typeof this.environment !== 'undefined') {
             this.environment = '.env'
             this.helper.warn('Defaulting to using `.env` for the environment')
@@ -80,7 +80,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    private env__exists(file__name: string): boolean {
+    private env__exists = (file__name: string): boolean => {
         if (existsSync(path.join(__dirname, '../', `${file__name}`)))
             return true
         return false
@@ -93,7 +93,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public environment__get(): string {
+    public environment__get = (): string => {
         return this.environment
     }
 
@@ -104,7 +104,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public env__get(): NodeJS.ProcessEnv {
+    public env__get = (): NodeJS.ProcessEnv => {
         return this.env
     }
 
@@ -115,7 +115,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public db__loaded(): boolean {
+    public db__loaded = (): boolean => {
         return (typeof this.db === 'undefined')
     }
 
@@ -127,7 +127,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public db__load(use__pool: boolean = false): boolean {
+    public db__load = (use__pool: boolean = false): boolean => {
         this.db = new database(this.env, use__pool, this.helper)
         return this.db__loaded()
     }
@@ -139,7 +139,31 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public db__init(): Promise<boolean> {
+    public db__init = (): Promise<boolean> => {
         return this.db.initialise()
+    }
+
+    /**
+     * 
+     * 
+     * @param {string} qry 
+     * @param {any[]} [vals] 
+     * @returns {Promise<any>} 
+     * 
+     * @memberOf tysql
+     */
+    public query = (qry: string, vals?: any[]): Promise<any> => {
+        return this.db.query(qry, vals)
+    }
+
+    /**
+     * 
+     * 
+     * @returns {Promise<boolean>} 
+     * 
+     * @memberOf tysql
+     */
+    public close = (): Promise<boolean> => {
+        return this.db.close()
     }
 }

@@ -1,4 +1,7 @@
 /// <reference types="node" />
+/// <reference types="node" />
+/// <reference types="node" />
+/// <reference types="node" />
 /**
  * TySQL
  * Typescript MySQL Utility
@@ -65,7 +68,7 @@ export declare class tysql {
      *
      * @memberOf tysql
      */
-    environment__get(): string;
+    environment__get: () => string;
     /**
      * Retrieve the process.env used within TySQL
      *
@@ -73,7 +76,7 @@ export declare class tysql {
      *
      * @memberOf tysql
      */
-    env__get(): NodeJS.ProcessEnv;
+    env__get: () => NodeJS.ProcessEnv;
     /**
      * Check to see if the database library has been loaded.
      *
@@ -81,16 +84,16 @@ export declare class tysql {
      *
      * @memberOf tysql
      */
-    db__loaded(): boolean;
+    db__loaded: () => boolean;
     /**
      * Creates a new instance of the database library.
      *
-     * @param {boolean} [use__pool=true] Boolean flag for if the database will connect via a pooled connection, or through a standard connection
+     * @param {boolean} [use__pool=false] Boolean flag for if the database will connect via a pooled connection, or through a standard connection
      * @returns {boolean} Returns true if the database library is loaded correctly, Otherwise false.
      *
      * @memberOf tysql
      */
-    db__load(use__pool?: boolean): boolean;
+    db__load: (use__pool?: boolean) => boolean;
     /**
      * Intialisation of the actual database connection
      *
@@ -98,5 +101,23 @@ export declare class tysql {
      *
      * @memberOf tysql
      */
-    db__init(): Promise<boolean>;
+    db__init: () => Promise<boolean>;
+    /**
+     *
+     *
+     * @param {string} qry
+     * @param {any[]} [vals]
+     * @returns {Promise<any>}
+     *
+     * @memberOf tysql
+     */
+    query: (qry: string, vals?: any[]) => Promise<any>;
+    /**
+     *
+     *
+     * @returns {Promise<boolean>}
+     *
+     * @memberOf tysql
+     */
+    close: () => Promise<boolean>;
 }

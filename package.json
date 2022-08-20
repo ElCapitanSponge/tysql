@@ -7,7 +7,8 @@
         "build": "tsc",
         "watch": "tsc -w & nodemon -q -w ./src ./dist",
         "docs": "npx typedoc --options ./typedoc.json",
-        "package": "npm pack --pack-destination releases"
+        "package": "npm pack --pack-destination releases",
+        "syft": "syft dir:./ --exclude ./dist --exclude ./docs --exclude ./logs --exclude ./sbom.json --output json --file ./sbom.json"
     },
     "repository": {
         "type": "git",

@@ -35,4 +35,16 @@ export class helper {
     public warn(message: string = '', data?: any): void {
         console.warn('⚠️WARNING⚠️ ::: ' + message, data)
     }
+
+    /**
+     * Prints an information message to the console using the supplied information
+     * 
+     * @param {string} [message=''] The desired message string
+     * @param {*} [data] Other helpul details, such as a stack trace, applicable variable or something similar (if applicable)
+     * 
+     * @memberOf helper
+     */
+    public info(message: string = '', data?: any): void {
+        console.info('ℹ️ INFO ℹ️ ::: ' + message, data)
+    }
 }
