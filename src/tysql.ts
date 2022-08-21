@@ -43,7 +43,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    constructor(private environment?: string) {
+    constructor(private environment__path: string = './', private environment?: string) {
         this.helper = new helper()
         this.env = this.env__load()
     }
@@ -57,17 +57,19 @@ export class tysql {
      * @memberOf tysql
      */
     private env__load = (): NodeJS.ProcessEnv => {
-        if (typeof this.environment !== 'undefined') {
+        if (typeof this.environment === 'undefined') {
             this.environment = '.env'
             this.helper.warn('Defaulting to using `.env` for the environment')
         }
-
-        if (this.env__exists(this.environment))
+        
+        if (this.env__exists(this.environment__path, this.environment)) {
             dotenv.config({
-                path: path.join(__dirname, '../', `${this.environment}`)
+                path: path.join(`${this.environment__path}`, `${this.environment}`)
             })
-        else
+        } else {
             this.helper.warn('No `' + this.environment + '` found. Falling back to defaults')
+            dotenv.config()
+        }
         return process.env
     }
 
@@ -80,8 +82,8 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    private env__exists = (file__name: string): boolean => {
-        if (existsSync(path.join(__dirname, '../', `${file__name}`)))
+    private env__exists = (file__path: string, file__name: string): boolean => {
+        if (existsSync(path.join(`${file__path}`, `${file__name}`)))
             return true
         return false
     }
@@ -95,6 +97,10 @@ export class tysql {
      */
     public environment__get = (): string => {
         return this.environment
+    }
+
+    public environment_path__get = (): string => {
+        return this.environment__path
     }
 
     /**
@@ -116,7 +122,7 @@ export class tysql {
      * @memberOf tysql
      */
     public db__loaded = (): boolean => {
-        return (typeof this.db === 'undefined')
+        return (typeof this.db !== 'undefined')
     }
 
     /**

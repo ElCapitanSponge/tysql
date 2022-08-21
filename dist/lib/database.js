@@ -22,7 +22,7 @@ class database {
         this.use__pool = use__pool;
         this.helper = helper;
         /**
-         *
+         * Creation of a pooled connection
          *
          * @private
          * @returns {Promise<Pool>} Promise containing either suth successful pool conneciton or an error message if the connection has failed when attempting to be established
@@ -32,8 +32,8 @@ class database {
         this.pool__create = () => {
             return new Promise((resolve, reject) => {
                 try {
-                    let tmp__pool = (0, mysql_1.createPool)(this.credentials);
-                    resolve(tmp__pool);
+                    let temp__pool = (0, mysql_1.createPool)(this.credentials);
+                    resolve(temp__pool);
                 }
                 catch (error) {
                     let message = 'Failed to initialise the connection pool';
@@ -43,7 +43,7 @@ class database {
             });
         };
         /**
-         *
+         * Creation of a standard mysql connection
          *
          * @private
          * @returns {Promise<Connection>}
@@ -53,8 +53,8 @@ class database {
         this.connection__create = () => {
             return new Promise((resolve, reject) => {
                 try {
-                    let tmp__connection = (0, mysql_1.createConnection)(this.connection);
-                    resolve(tmp__connection);
+                    let temp__connection = (0, mysql_1.createConnection)(this.credentials);
+                    resolve(temp__connection);
                 }
                 catch (error) {
                     let message = 'Failed to initialise the connection';
@@ -64,16 +64,42 @@ class database {
             });
         };
         /**
+         * Initialise the credentials that are to be used
          *
+         * @private
+         * @memberOf database
+         */
+        this.initialise__credentials = () => {
+            this.credentials = {
+                host: this.env.db__host,
+                user: this.env.db__user,
+                password: this.env.db__password,
+                port: parseInt(this.env.db__port)
+            };
+            if (typeof this.env.db__database !== 'undefined')
+                this.credentials.database = this.env.db__database;
+            if (typeof this.env.db__port !== 'undefined')
+                this.credentials.port = parseInt(this.env.db__port);
+        };
+        /**
+         * Validation of the environment variables
          *
+         * @private
          * @returns {Promise<boolean>}
          *
          * @memberOf database
          */
         this.validate__env = () => {
             return new Promise((resolve, reject) => {
-                let valid = false;
-                resolve(valid);
+                if (typeof this.env.db__host === 'undefined')
+                    reject(new Error('DB Host is not defined'));
+                if (typeof this.env.db__user === 'undefined')
+                    reject(new Error('DB User is not defined'));
+                if (typeof this.env.db__password === 'undefined')
+                    reject(new Error('DB Password is not defined'));
+                if (typeof this.env.db__port === 'undefined')
+                    reject(new Error('DB Port is not defined'));
+                resolve(true);
             });
         };
         /**
@@ -86,31 +112,45 @@ class database {
          * @memberOf database
          */
         this.initialise = () => {
-            if (this.use__pool)
-                return this.pool__create()
-                    .then((response) => {
-                    this.pool = response;
-                    return true;
-                })
-                    .catch(error => {
-                    throw error;
-                });
-            else
-                return this.connection__create()
-                    .then((response) => {
-                    this.connection = response;
-                    return true;
-                })
-                    .catch(error => {
-                    throw error;
-                });
+            return this.validate__env()
+                .then((response) => {
+                this.initialise__credentials();
+                if (this.use__pool)
+                    return this.pool__create()
+                        .then((response) => {
+                        this.pool = response;
+                        return true;
+                    })
+                        .catch(error => {
+                        throw error;
+                    });
+                else
+                    return this.connection__create()
+                        .then((response) => {
+                        this.connection = response;
+                        return this.connection.connect((err) => {
+                            if (err) {
+                                let message = 'Unable to connect to the connection';
+                                this.helper.error(message, err);
+                                throw err;
+                            }
+                            return true;
+                        });
+                    })
+                        .catch(error => {
+                        throw error;
+                    });
+            })
+                .catch(error => {
+                throw error;
+            });
         };
         /**
-         *
+         * Executing the desired query
          *
          * @param {string} qry The query that is to be executed
          * @param {any[]} [values] The list of values to be applied to the prepared statement if applicable
-         * @returns {Promise<T>}
+         * @returns {Promise<T>} Returns the result of the query
          *
          * @memberOf database
          */
@@ -165,9 +205,9 @@ class database {
             });
         };
         /**
+         * Closing of the desired connection
          *
-         *
-         * @returns {Promise<boolean>}
+         * @returns {Promise<boolean>} Returns true if the connection has closed
          *
          * @memberOf database
          */
@@ -200,16 +240,6 @@ class database {
                 }
             });
         };
-        this.credentials = {
-            host: this.env.db__host,
-            user: this.env.db__user,
-            password: this.env.db__password,
-            port: parseInt(this.env.db__port)
-        };
-        if (typeof this.env.db__database !== 'undefined')
-            this.credentials.database = this.env.db__database;
-        if (typeof this.env.db__port !== 'undefined')
-            this.credentials.port = parseInt(this.env.db__port);
     }
 }
 exports.database = database;

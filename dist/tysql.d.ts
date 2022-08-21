@@ -1,7 +1,3 @@
-/// <reference types="node" />
-/// <reference types="node" />
-/// <reference types="node" />
-/// <reference types="node" />
 /**
  * TySQL
  * Typescript MySQL Utility
@@ -10,6 +6,7 @@
  * @class tysql
  */
 export declare class tysql {
+    private environment__path;
     private environment?;
     /**
      * Database library instance used by TySQL
@@ -41,7 +38,7 @@ export declare class tysql {
      *
      * @memberOf tysql
      */
-    constructor(environment?: string);
+    constructor(environment__path?: string, environment?: string);
     /**
      * Loading of the `.env` file into process.env to be used throughout TySQL
      *
@@ -69,6 +66,7 @@ export declare class tysql {
      * @memberOf tysql
      */
     environment__get: () => string;
+    environment_path__get: () => string;
     /**
      * Retrieve the process.env used within TySQL
      *
@@ -103,19 +101,19 @@ export declare class tysql {
      */
     db__init: () => Promise<boolean>;
     /**
+     * Running a desired query. Preferable to use a prepared sql statement to mitigate injection issues
      *
-     *
-     * @param {string} qry
-     * @param {any[]} [vals]
-     * @returns {Promise<any>}
+     * @param {string} qry The query that is to be executed
+     * @param {any[]} [vals] An array of the values to be injected into a prepared sql statement if applicable.
+     * @returns {Promise<any>} Retrieve the resukt of the query that has been executed
      *
      * @memberOf tysql
      */
     query: (qry: string, vals?: any[]) => Promise<any>;
     /**
+     * losing of the database connection
      *
-     *
-     * @returns {Promise<boolean>}
+     * @returns {Promise<boolean>} Returns true if the connection has closed.
      *
      * @memberOf tysql
      */

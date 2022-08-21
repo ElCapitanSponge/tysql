@@ -56,8 +56,8 @@ export class database {
     private pool__create = (): Promise<Pool> => {
         return new Promise<Pool>((resolve: Pool, reject) => {
             try {
-                let tmp__pool: Pool = createPool(this.credentials)
-                resolve(tmp__pool)
+                let temp__pool: Pool = createPool(this.credentials)
+                resolve(temp__pool)
             } catch (error) {
                 let message: string = 'Failed to initialise the connection pool'
                 this.helper.error(message, error)
@@ -77,8 +77,8 @@ export class database {
     private connection__create = (): Promise<Connection> => {
         return new Promise<Connection>((resolve: Connection, reject) => {
             try {
-                let tmp__connection: Connection = createConnection(this.connection)
-                resolve(tmp__connection)
+                let temp__connection: Connection = createConnection(this.credentials)
+                resolve(temp__connection)
             } catch (error) {
                 let message: string = 'Failed to initialise the connection'
                 this.helper.error(message, error)
@@ -154,7 +154,14 @@ export class database {
                     return this.connection__create()
                         .then((response: Connection) => {
                             this.connection = response
-                            return true
+                            return this.connection.connect((err) => {
+                                if (err) {
+                                    let message: string = 'Unable to connect to the connection'
+                                    this.helper.error(message, err)
+                                    throw err
+                                }
+                                return true
+                            })
                         })
                         .catch(error => {
                             throw error
@@ -163,7 +170,7 @@ export class database {
             .catch(error => {
                 throw error
             })
-        
+
     }
 
     /**

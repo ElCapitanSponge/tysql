@@ -44,7 +44,7 @@ export declare class database {
      */
     constructor(env: NodeJS.ProcessEnv, use__pool: boolean, helper: helper);
     /**
-     *
+     * Creation of a pooled connection
      *
      * @private
      * @returns {Promise<Pool>} Promise containing either suth successful pool conneciton or an error message if the connection has failed when attempting to be established
@@ -53,7 +53,7 @@ export declare class database {
      */
     private pool__create;
     /**
-     *
+     * Creation of a standard mysql connection
      *
      * @private
      * @returns {Promise<Connection>}
@@ -62,13 +62,21 @@ export declare class database {
      */
     private connection__create;
     /**
+     * Initialise the credentials that are to be used
      *
+     * @private
+     * @memberOf database
+     */
+    private initialise__credentials;
+    /**
+     * Validation of the environment variables
      *
+     * @private
      * @returns {Promise<boolean>}
      *
      * @memberOf database
      */
-    validate__env: () => Promise<boolean>;
+    private validate__env;
     /**
      * Initialising the connection to the database.
      * If flagged to use a pooled connection, this will be initalised and handled as required.
@@ -80,19 +88,19 @@ export declare class database {
      */
     initialise: () => Promise<boolean>;
     /**
-     *
+     * Executing the desired query
      *
      * @param {string} qry The query that is to be executed
      * @param {any[]} [values] The list of values to be applied to the prepared statement if applicable
-     * @returns {Promise<T>}
+     * @returns {Promise<T>} Returns the result of the query
      *
      * @memberOf database
      */
     query: <T>(qry: string, values?: any[]) => Promise<T>;
     /**
+     * Closing of the desired connection
      *
-     *
-     * @returns {Promise<boolean>}
+     * @returns {Promise<boolean>} Returns true if the connection has closed
      *
      * @memberOf database
      */

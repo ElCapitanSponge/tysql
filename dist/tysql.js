@@ -46,7 +46,8 @@ class tysql {
      *
      * @memberOf tysql
      */
-    constructor(environment) {
+    constructor(environment__path = './', environment) {
+        this.environment__path = environment__path;
         this.environment = environment;
         /**
          * Loading of the `.env` file into process.env to be used throughout TySQL
@@ -57,16 +58,19 @@ class tysql {
          * @memberOf tysql
          */
         this.env__load = () => {
-            if (typeof this.environment !== 'undefined') {
+            if (typeof this.environment === 'undefined') {
                 this.environment = '.env';
                 this.helper.warn('Defaulting to using `.env` for the environment');
             }
-            if (this.env__exists(this.environment))
+            if (this.env__exists(this.environment__path, this.environment)) {
                 dotenv.config({
-                    path: path_1.default.join(__dirname, '../', `${this.environment}`)
+                    path: path_1.default.join(`${this.environment__path}`, `${this.environment}`)
                 });
-            else
+            }
+            else {
                 this.helper.warn('No `' + this.environment + '` found. Falling back to defaults');
+                dotenv.config();
+            }
             return process.env;
         };
         /**
@@ -78,8 +82,8 @@ class tysql {
          *
          * @memberOf tysql
          */
-        this.env__exists = (file__name) => {
-            if ((0, fs_1.existsSync)(path_1.default.join(__dirname, '../', `${file__name}`)))
+        this.env__exists = (file__path, file__name) => {
+            if ((0, fs_1.existsSync)(path_1.default.join(`${file__path}`, `${file__name}`)))
                 return true;
             return false;
         };
@@ -92,6 +96,9 @@ class tysql {
          */
         this.environment__get = () => {
             return this.environment;
+        };
+        this.environment_path__get = () => {
+            return this.environment__path;
         };
         /**
          * Retrieve the process.env used within TySQL
@@ -111,7 +118,7 @@ class tysql {
          * @memberOf tysql
          */
         this.db__loaded = () => {
-            return (typeof this.db === 'undefined');
+            return (typeof this.db !== 'undefined');
         };
         /**
          * Creates a new instance of the database library.
@@ -136,11 +143,11 @@ class tysql {
             return this.db.initialise();
         };
         /**
+         * Running a desired query. Preferable to use a prepared sql statement to mitigate injection issues
          *
-         *
-         * @param {string} qry
-         * @param {any[]} [vals]
-         * @returns {Promise<any>}
+         * @param {string} qry The query that is to be executed
+         * @param {any[]} [vals] An array of the values to be injected into a prepared sql statement if applicable.
+         * @returns {Promise<any>} Retrieve the resukt of the query that has been executed
          *
          * @memberOf tysql
          */
@@ -148,9 +155,9 @@ class tysql {
             return this.db.query(qry, vals);
         };
         /**
+         * losing of the database connection
          *
-         *
-         * @returns {Promise<boolean>}
+         * @returns {Promise<boolean>} Returns true if the connection has closed.
          *
          * @memberOf tysql
          */

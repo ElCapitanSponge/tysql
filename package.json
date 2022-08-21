@@ -1,6 +1,6 @@
 {
     "name": "@elcapitansponge/tysql",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "description": "General purpose mysql utility for typescript",
     "main": "dist/tysql.js",
     "scripts": {
@@ -8,7 +8,10 @@
         "watch": "tsc -w & nodemon -q -w ./src ./dist",
         "docs": "npx typedoc --options ./typedoc.json",
         "package": "npm pack --pack-destination releases",
-        "syft": "syft dir:./ --exclude ./dist --exclude ./docs --exclude ./logs --exclude ./sbom.json --output json --file ./sbom.json"
+        "syft": "syft dir:./ --exclude ./dist --exclude ./docs --exclude ./logs --exclude ./sbom.json --output json --file ./sbom.json",
+        "test:build": "tsc -p test/tsconfig.json",
+        "test:watch": "tsc -p test/tsconfig.json -w & nodemon -q -w ./test/ts ./test/out",
+        "test:run": "node ./test/out/index.js"
     },
     "repository": {
         "type": "git",
