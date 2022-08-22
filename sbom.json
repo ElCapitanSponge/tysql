@@ -64,6 +64,33 @@
    "purl": "pkg:npm/anymatch@3.1.2"
   },
   {
+   "id": "805f31e8a0dab2fc",
+   "name": "auto-changelog",
+   "version": "2.4.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:auto-changelog:auto-changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:auto-changelog:auto_changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:auto_changelog:auto-changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:auto_changelog:auto_changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:auto:auto-changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:auto:auto_changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:auto-changelog:2.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:auto_changelog:2.4.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/auto-changelog@2.4.0"
+  },
+  {
    "id": "6deb94bf6aacdc4d",
    "name": "balanced-match",
    "version": "1.0.2",
@@ -206,6 +233,27 @@
     "cpe:2.3:a:*:chokidar:3.5.3:*:*:*:*:*:*:*"
    ],
    "purl": "pkg:npm/chokidar@3.5.3"
+  },
+  {
+   "id": "c86170953f33b9fe",
+   "name": "commander",
+   "version": "7.2.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:commander:commander:7.2.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:commander:7.2.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/commander@7.2.0"
   },
   {
    "id": "a57e83094b580d02",
@@ -379,6 +427,27 @@
     "cpe:2.3:a:*:glob_parent:5.1.2:*:*:*:*:*:*:*"
    ],
    "purl": "pkg:npm/glob-parent@5.1.2"
+  },
+  {
+   "id": "f06873f8dd716261",
+   "name": "handlebars",
+   "version": "4.7.7",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:handlebars:handlebars:4.7.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:handlebars:4.7.7:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/handlebars@4.7.7"
   },
   {
    "id": "8d0b446fd528c874",
@@ -620,6 +689,33 @@
    "purl": "pkg:npm/jsonc-parser@3.1.0"
   },
   {
+   "id": "a1424c323b19328e",
+   "name": "lru-cache",
+   "version": "6.0.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "ISC"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:lru-cache:lru-cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:lru-cache:lru_cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:lru_cache:lru-cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:lru_cache:lru_cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:lru:lru-cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:lru:lru_cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:lru-cache:6.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:lru_cache:6.0.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/lru-cache@6.0.0"
+  },
+  {
    "id": "b9cefb8d860becb7",
    "name": "lunr",
    "version": "2.3.9",
@@ -683,6 +779,27 @@
    "purl": "pkg:npm/minimatch@3.1.2"
   },
   {
+   "id": "f3529068ce51f24b",
+   "name": "minimist",
+   "version": "1.2.6",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:minimist:minimist:1.2.6:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:minimist:1.2.6:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/minimist@1.2.6"
+  },
+  {
    "id": "14d3fa3d694dff17",
    "name": "ms",
    "version": "2.1.3",
@@ -723,6 +840,60 @@
     "cpe:2.3:a:*:mysql:2.18.1:*:*:*:*:*:*:*"
    ],
    "purl": "pkg:npm/mysql@2.18.1"
+  },
+  {
+   "id": "d343e3721e2e1aa6",
+   "name": "neo-async",
+   "version": "2.6.2",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:neo-async:neo-async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:neo-async:neo_async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:neo_async:neo-async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:neo_async:neo_async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:neo:neo-async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:neo:neo_async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:neo-async:2.6.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:neo_async:2.6.2:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/neo-async@2.6.2"
+  },
+  {
+   "id": "9c686bdb57bbed3d",
+   "name": "node-fetch",
+   "version": "2.6.7",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:node-fetch:node-fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:node-fetch:node_fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:node_fetch:node-fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:node_fetch:node_fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:node:node-fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:node:node_fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:node-fetch:2.6.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:node_fetch:2.6.7:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/node-fetch@2.6.7"
   },
   {
    "id": "f5297ff98ec84d52",
@@ -792,6 +963,37 @@
     "cpe:2.3:a:*:normalize_path:3.0.0:*:*:*:*:*:*:*"
    ],
    "purl": "pkg:npm/normalize-path@3.0.0"
+  },
+  {
+   "id": "be1b8e83c5d5cb38",
+   "name": "parse-github-url",
+   "version": "1.0.2",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:parse-github-url:parse-github-url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse-github-url:parse_github_url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse_github_url:parse-github-url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse_github_url:parse_github_url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse-github:parse-github-url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse-github:parse_github_url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse_github:parse-github-url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse_github:parse_github_url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse:parse-github-url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:parse:parse_github_url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:parse-github-url:1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:parse_github_url:1.0.2:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/parse-github-url@1.0.2"
   },
   {
    "id": "38bc627ed4e64c09",
@@ -1015,6 +1217,33 @@
    "purl": "pkg:npm/simple-update-notifier@1.0.7"
   },
   {
+   "id": "5c750aca438d70a2",
+   "name": "source-map",
+   "version": "0.6.1",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "BSD-3-Clause"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:source-map:source-map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:source-map:source_map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:source_map:source-map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:source_map:source_map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:source:source-map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:source:source_map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:source-map:0.6.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:source_map:0.6.1:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/source-map@0.6.1"
+  },
+  {
    "id": "62d88207e8466669",
    "name": "sqlstring",
    "version": "2.3.1",
@@ -1142,6 +1371,27 @@
    "purl": "pkg:npm/touch@3.1.0"
   },
   {
+   "id": "355d006cba4cc236",
+   "name": "tr46",
+   "version": "0.0.3",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:tr46:tr46:0.0.3:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:tr46:0.0.3:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/tr46@0.0.3"
+  },
+  {
    "id": "7e4a25f2c4e4bb0",
    "name": "typedoc",
    "version": "0.23.10",
@@ -1182,6 +1432,33 @@
     "cpe:2.3:a:*:typescript:4.7.4:*:*:*:*:*:*:*"
    ],
    "purl": "pkg:npm/typescript@4.7.4"
+  },
+  {
+   "id": "352bcc8c503148ea",
+   "name": "uglify-js",
+   "version": "3.17.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "BSD-2-Clause"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:uglify-js:uglify-js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:uglify-js:uglify_js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:uglify_js:uglify-js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:uglify_js:uglify_js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:uglify:uglify-js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:uglify:uglify_js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:uglify-js:3.17.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:uglify_js:3.17.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/uglify-js@3.17.0"
   },
   {
    "id": "1faecf737ed0891a",
@@ -1284,6 +1561,102 @@
     "cpe:2.3:a:*:vscode_textmate:5.2.0:*:*:*:*:*:*:*"
    ],
    "purl": "pkg:npm/vscode-textmate@5.2.0"
+  },
+  {
+   "id": "6ba195795c890c3f",
+   "name": "webidl-conversions",
+   "version": "3.0.1",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "BSD-2-Clause"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:webidl-conversions:webidl-conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:webidl-conversions:webidl_conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:webidl_conversions:webidl-conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:webidl_conversions:webidl_conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:webidl:webidl-conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:webidl:webidl_conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:webidl-conversions:3.0.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:webidl_conversions:3.0.1:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/webidl-conversions@3.0.1"
+  },
+  {
+   "id": "ee3ad6b9f2dac6a5",
+   "name": "whatwg-url",
+   "version": "5.0.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:whatwg-url:whatwg-url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:whatwg-url:whatwg_url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:whatwg_url:whatwg-url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:whatwg_url:whatwg_url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:whatwg:whatwg-url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:whatwg:whatwg_url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:whatwg-url:5.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:whatwg_url:5.0.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/whatwg-url@5.0.0"
+  },
+  {
+   "id": "56ba32e48e63cc07",
+   "name": "wordwrap",
+   "version": "1.0.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "MIT"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:wordwrap:wordwrap:1.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:wordwrap:1.0.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/wordwrap@1.0.0"
+  },
+  {
+   "id": "284e64d0435d284c",
+   "name": "yallist",
+   "version": "4.0.0",
+   "type": "npm",
+   "foundBy": "javascript-lock-cataloger",
+   "locations": [
+    {
+     "path": "package-lock.json"
+    }
+   ],
+   "licenses": [
+    "ISC"
+   ],
+   "language": "javascript",
+   "cpes": [
+    "cpe:2.3:a:yallist:yallist:4.0.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:yallist:4.0.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:npm/yallist@4.0.0"
   }
  ],
  "artifactRelationships": [],

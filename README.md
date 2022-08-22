@@ -83,22 +83,20 @@ An example of useable typescript code can be found [here](https://github.com/ElC
 <!-- ROADMAP -->
 # Roadmap
 
-- [ ] Add Changelog
-
 See the [open issues](https://github.com/ElCapitanSponge/tysql/issues) for a full list of proposed features (and known issues).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CODE_OF_CONDUCT -->
 # Code of Conduct
-See `CODE_OF_CONDUCT` for more information.
+See [`CODE_OF_CONDUCT`](https://github.com/ElCapitanSponge/tysql/blob/main/CODE_OF_CONDUCT.md) for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 # Contributing
-See `CONTRIBUTING` for more information.
+See [`CONTRIBUTING`](https://github.com/ElCapitanSponge/tysql/blob/main/CONTRIBUTING.md) for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 # License
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/ElCapitanSponge/tysql/blob/main/LICENSE) for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
