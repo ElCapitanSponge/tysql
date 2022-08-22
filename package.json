@@ -7,11 +7,12 @@
         "build": "tsc",
         "watch": "tsc -w & nodemon -q -w ./src ./dist",
         "docs": "npx typedoc --options ./typedoc.json",
-        "package": "npm pack --pack-destination releases",
-        "syft": "syft dir:./ --exclude ./dist --exclude ./docs --exclude ./logs --exclude ./sbom.json --output json --file ./sbom.json",
+        "package": "npm run changelog & npm pack --pack-destination releases",
         "test:build": "tsc -p test/tsconfig.json",
         "test:watch": "tsc -p test/tsconfig.json -w & nodemon -q -w ./test/ts ./test/out",
-        "test:run": "node ./test/out/index.js"
+        "test:run": "node ./test/out/index.js",
+        "changelog": "auto-changelog -p && git add CHANGELOG.md",
+        "syft": "syft dir:./ --exclude ./dist --exclude ./docs --exclude ./logs --exclude ./sbom.json --output json --file ./sbom.json"
     },
     "repository": {
         "type": "git",
@@ -30,6 +31,7 @@
     "homepage": "https://elcapitansponge.github.io/tysql/",
     "devDependencies": {
         "@types/node": "^18.0.5",
+        "auto-changelog": "^2.4.0",
         "nodemon": "^2.0.19",
         "typedoc": "^0.23.8"
     },
