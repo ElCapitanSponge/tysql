@@ -41,24 +41,6 @@
     <a href="https://github.com/ElCapitanSponge/tysql/issues/new">Request Feature</a>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 # About The Project
 
@@ -70,19 +52,50 @@ This was born out of the desire to have robust module for managing and working w
 
 ## Installation
 
+To install the package run the following command.
+
 ```sh
 npm install @elcapitansponge/tysql
 ```
+
+Upon installation, TySQL leverages `.env` to handle the connection configuration and details.
+
+### Configuration File
+
+The configurations all have a `db__` prefix.
+
+The names of the configurations are familiar if you have used mysql connections before. This is reflected in the example of the `.env` file is bellow (Sample template can be located at [Sample .env](https://github.com/ElCapitanSponge/tysql/blob/main/samples/.env)):
+
+```env
+db__host: 'localhost'
+db__user: 'usr'
+db__password: 'pass'
+db__port: 3306
+db__schema: 'schema'
+```
+
+## Example code
+
+An example of useable typescript code can be found [here](https://github.com/ElCapitanSponge/tysql/blob/main/test/ts/index.ts)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 # Roadmap
 
 - [ ] Add Changelog
-- [ ] Add Contributing Guide
-- [ ] Expand on the information within the README
 
 See the [open issues](https://github.com/ElCapitanSponge/tysql/issues) for a full list of proposed features (and known issues).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CODE_OF_CONDUCT -->
+# Code of Conduct
+See `CODE_OF_CONDUCT` for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+# Contributing
+See `CONTRIBUTING` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
