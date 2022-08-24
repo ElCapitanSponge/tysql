@@ -1,9 +1,9 @@
 {
  "artifacts": [
   {
-   "id": "13900f9830fe919e",
+   "id": "772ee9ba06467087",
    "name": "@types/node",
-   "version": "18.7.5",
+   "version": "18.7.13",
    "type": "npm",
    "foundBy": "javascript-lock-cataloger",
    "locations": [
@@ -16,10 +16,10 @@
    ],
    "language": "javascript",
    "cpes": [
-    "cpe:2.3:a:\\@types\\/node:\\@types\\/node:18.7.5:*:*:*:*:*:*:*",
-    "cpe:2.3:a:*:\\@types\\/node:18.7.5:*:*:*:*:*:*:*"
+    "cpe:2.3:a:\\@types\\/node:\\@types\\/node:18.7.13:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:\\@types\\/node:18.7.13:*:*:*:*:*:*:*"
    ],
-   "purl": "pkg:npm/%40types/node@18.7.5"
+   "purl": "pkg:npm/%40types/node@18.7.13"
   },
   {
    "id": "86480655de2d7270",
@@ -737,9 +737,9 @@
    "purl": "pkg:npm/lunr@2.3.9"
   },
   {
-   "id": "e71d784fd19434ce",
+   "id": "1599afe13c916cd0",
    "name": "marked",
-   "version": "4.0.18",
+   "version": "4.0.19",
    "type": "npm",
    "foundBy": "javascript-lock-cataloger",
    "locations": [
@@ -752,10 +752,10 @@
    ],
    "language": "javascript",
    "cpes": [
-    "cpe:2.3:a:marked:marked:4.0.18:*:*:*:*:*:*:*",
-    "cpe:2.3:a:*:marked:4.0.18:*:*:*:*:*:*:*"
+    "cpe:2.3:a:marked:marked:4.0.19:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:marked:4.0.19:*:*:*:*:*:*:*"
    ],
-   "purl": "pkg:npm/marked@4.0.18"
+   "purl": "pkg:npm/marked@4.0.19"
   },
   {
    "id": "9ff4fe5305e2d1b2",
@@ -1144,9 +1144,9 @@
    "purl": "pkg:npm/safe-buffer@5.1.2"
   },
   {
-   "id": "f3b2102501bed65d",
+   "id": "9e96c6a0940d16e7",
    "name": "semver",
-   "version": "5.7.1",
+   "version": "7.3.7",
    "type": "npm",
    "foundBy": "javascript-lock-cataloger",
    "locations": [
@@ -1159,10 +1159,10 @@
    ],
    "language": "javascript",
    "cpes": [
-    "cpe:2.3:a:semver:semver:5.7.1:*:*:*:*:*:*:*",
-    "cpe:2.3:a:*:semver:5.7.1:*:*:*:*:*:*:*"
+    "cpe:2.3:a:semver:semver:7.3.7:*:*:*:*:*:*:*",
+    "cpe:2.3:a:*:semver:7.3.7:*:*:*:*:*:*:*"
    ],
-   "purl": "pkg:npm/semver@5.7.1"
+   "purl": "pkg:npm/semver@7.3.7"
   },
   {
    "id": "8cc86d6b972a0497",
