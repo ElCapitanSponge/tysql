@@ -145,7 +145,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public db__init = (): Promise<boolean> => {
+    public db__init = async (): Promise<boolean> => {
         return this.db.initialise()
     }
 
@@ -158,7 +158,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public query = (qry: string, vals?: any[]): Promise<any> => {
+    public query = async (qry: string, vals?: any[]): Promise<any> => {
         return this.db.query(qry, vals)
     }
 
@@ -169,7 +169,7 @@ export class tysql {
      * 
      * @memberOf tysql
      */
-    public close = (): Promise<boolean> => {
+    public close = async (): Promise<boolean> => {
         return this.db.close()
     }
 }
