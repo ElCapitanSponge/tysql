@@ -1,6 +1,6 @@
 {
     "name": "@elcapitansponge/tysql",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "General purpose mysql utility for typescript",
     "main": "dist/tysql.js",
     "scripts": {
@@ -30,10 +30,10 @@
     },
     "homepage": "https://elcapitansponge.github.io/tysql/",
     "devDependencies": {
-        "@types/node": "^18.0.5",
+        "@types/node": "^18.7.13",
         "auto-changelog": "^2.4.0",
         "nodemon": "^2.0.19",
-        "typedoc": "^0.23.8"
+        "typedoc": "^0.23.10"
     },
     "dependencies": {
         "dotenv": "^16.0.1",
