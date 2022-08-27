@@ -8,7 +8,7 @@ class test {
         this.t = new tysql(path, env)
     }
 }
-let pool__use: boolean = true
+let pool__use: boolean = false
 let p: string = path.join(__dirname, '../')
 let test__bind: test = new test(p, '.env')
 

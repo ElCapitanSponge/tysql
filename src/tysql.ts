@@ -135,11 +135,10 @@ export class tysql {
      */
     public db__load = (use__pool: boolean = false): boolean => {
         try {
-            let tmp__db = new database(this.env, use__pool, this.helper)
-            this.helper.info('tmp__db', tmp__db)
-            this.db = tmp__db
+            this.db = new database(this.env, use__pool, this.helper)
+            return true
         } catch (e) {
-            this.helper.error('DB Connection error', e)
+            this.helper.error('Database Handler Failed', e)
             return false
         }
     }
