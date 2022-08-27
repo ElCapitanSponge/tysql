@@ -134,8 +134,13 @@ export class tysql {
      * @memberOf tysql
      */
     public db__load = (use__pool: boolean = false): boolean => {
-        this.db = new database(this.env, use__pool, this.helper)
-        return this.db__loaded()
+        try {
+            this.db = new database(this.env, use__pool, this.helper)
+            return true
+        } catch (e) {
+            this.helper.error('Database Handler Failed', e)
+            return false
+        }
     }
 
     /**

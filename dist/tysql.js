@@ -138,8 +138,14 @@ class tysql {
          * @memberOf tysql
          */
         this.db__load = (use__pool = false) => {
-            this.db = new database_1.database(this.env, use__pool, this.helper);
-            return this.db__loaded();
+            try {
+                this.db = new database_1.database(this.env, use__pool, this.helper);
+                return true;
+            }
+            catch (e) {
+                this.helper.error('Database Handler Failed', e);
+                return false;
+            }
         };
         /**
          * Intialisation of the actual database connection
