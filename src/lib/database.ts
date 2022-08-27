@@ -154,21 +154,21 @@ export class database {
                     return this.connection__create()
                         .then((response: Connection) => {
                             this.connection = response
-                            return this.connection.connect((err) => {
+                            this.connection.connect((err) => {
                                 if (err) {
                                     let message: string = 'Unable to connect to the connection'
                                     this.helper.error(message, err)
                                     throw err
                                 }
-                                return true
                             })
+                            return true
                         })
                         .catch(error => {
                             throw error
                         })
             })
             .catch(error => {
-                throw error
+                throw new Error(error)
             })
 
     }

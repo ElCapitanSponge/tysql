@@ -12,7 +12,7 @@ class test {
         this.t = new tysql_1.tysql(path, env);
     }
 }
-let pool__use = true;
+let pool__use = false;
 let p = path_1.default.join(__dirname, '../');
 let test__bind = new test(p, '.env');
 let close__connection = () => {
